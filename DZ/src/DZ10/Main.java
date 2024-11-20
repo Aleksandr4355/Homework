@@ -39,5 +39,6 @@ public class Main {
                 break;
         }
         input.close();
+        System.out.println("\nДомашние задание");
     }
 }
