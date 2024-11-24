@@ -18,7 +18,6 @@ public class Main {
         for (int i = n.length() - 1; i >= 0; i--) {
             result = result + n.charAt(i);
         }
-        ;
         return removeSymbol(result);
     }
     public static String removeSymbol (String n){
