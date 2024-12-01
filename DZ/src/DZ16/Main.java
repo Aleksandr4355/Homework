@@ -2,26 +2,27 @@ package DZ16;
 
 public class Main {
     public static void main(String[] args) {
-        StringBuilder text = new StringBuilder("  Текс с повторяющимся символами ");
+        String text = "  Текст с повторяющимися символами ";
         System.out.println("Исходнфя строка - " + '"' + text + '"');
-        ;
-        System.out.println(removeSymbol(text));
-
+        System.out.println("Измененная строка: " + '"' + removeSymbol(text) + '"');
     }
-    public static StringBuilder removeSymbol (StringBuilder textP){
+
+    public static StringBuilder removeSymbol(String str) {
+        StringBuilder textBuilder = new StringBuilder();
         int pos;
-        int pos1;
-        while ((pos =(textP.indexOf(" "))) != -1){
-            textP = textP.deleteCharAt(pos);
+        char[] textArray = str.toCharArray();
+        for (int i = 0; i < str.length(); i++) {
+            for (int j = 0; j < str.length(); j++) {
+                if (textArray[i] == textArray[j] && j > i) {
+                    textArray[j] = ' ';
+                }
+            }
         }
-        for (int i = 0; i < textP.length(); i++) {
-
+        str = String.valueOf(textArray);
+        textBuilder.append(str);
+        while ((pos = textBuilder.indexOf(" ")) != -1) {
+            textBuilder = textBuilder.deleteCharAt(pos);
         }
-
-        System.out.println();
-        return textP;
+        return textBuilder;
     }
-
 }
-//System.out.println(); // поиск индекса указаного символа
-//System.out.println(sb.indexOf("l",4)); // поиск индекса указаного символа с индекса
