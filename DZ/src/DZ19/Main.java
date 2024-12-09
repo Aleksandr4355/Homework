@@ -11,7 +11,6 @@ public class Main {
             dataCar.getTextPrint( 6);
         }
     }
-
     public static void programMenu (){
         int number;
         do {
