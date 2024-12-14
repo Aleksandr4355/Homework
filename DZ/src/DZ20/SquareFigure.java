@@ -2,10 +2,6 @@ package DZ20;
 
 public class SquareFigure {
     static private int count;
-    private int side1;
-    private int side2;
-    private int side3;
-    private int height;
 
     public SquareFigure() {
     }
