@@ -1,14 +1,14 @@
 package DZ20;
 
 public class SquareFigure {
-    static private int count;
+     private static int count;
 
     public SquareFigure() {
     }
 
     public void calculationSquareTriangle(int side1, int side2, int side3) {
         double polPerimeter, square;
-        polPerimeter = (side1 + side2 + side3) / 2;
+        polPerimeter = (side1 + side2 + side3) / 2.0;
         square = Math.sqrt(polPerimeter * (polPerimeter - side1) * (polPerimeter - side2) * (polPerimeter - side3));
         if (square == 0.0)
             System.out.println("\n<Такого треугольника не существует!>");
