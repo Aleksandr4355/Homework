@@ -9,7 +9,7 @@ public class Main {
         System.out.printf("--------------------------------%n");
         System.out.printf("| %-10s | %-8s | %04d |%n", "Floating", "double", 64);
         System.out.printf("| %-10s | %-8s | %04d |%n", "Floating", "float", 32);
-        System.out.printf("| %-10s | %-8s | %04d |%n", "Integral", "long", 64);
+        System.out.printf("| %- 10s | %-8s | %04d |%n", "Integral", "long", 64);
         System.out.printf("| %-10s | %-8s | %04d |%n", "Integral", "int", 32);
         System.out.printf("| %-10s | %-8s | %04d |%n", "Integral", "short", 16);
         System.out.printf("| %-10s | %-8s | %04d |%n", "Integral", "byte", 8);
