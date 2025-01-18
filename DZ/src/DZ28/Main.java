@@ -9,10 +9,14 @@ public class Main {
         Scanner input = new Scanner(System.in);
         System.out.print("Ввведите строку: ");
         String stringInput = input.nextLine();
-        if (verificationLitter(stringInput)) {
-            System.out.println("Исходная строка: " + stringInput + "\nВ строке найдены глассные буквы");
-        } else {
-            throw new ExceptionString("Исходная строка: " + stringInput + ", Ошибка: строка не содержит гласные букв");
+        try {
+            if (verificationLitter(stringInput)) {
+                System.out.println("Исходная строка: " + stringInput + "\nВ строке найдены глассные буквы");
+            } else {
+                throw new ExceptionString("Исходная строка: " + stringInput + "\nОшибка: строка не содержит гласные букв");
+            }
+        }catch (ExceptionString e){
+            System.out.println(e.getMessage());
         }
     }
 
