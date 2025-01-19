@@ -5,31 +5,30 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Main {
-    public static void main(String[] args) throws ExceptionString {
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.print("Ввведите строку: ");
+        System.out.print("Введите строку: ");
         String stringInput = input.nextLine();
+        System.out.println("\nИсходная строка: " + stringInput);
         try {
-            if (verificationLitter(stringInput)) {
-                System.out.println("Исходная строка: " + stringInput + "\nВ строке найдены глассные буквы");
-            } else {
-                throw new ExceptionString("Исходная строка: " + stringInput + "\nОшибка: строка не содержит гласные букв");
-            }
-        }catch (ExceptionString e){
+            verificationLitter(stringInput);
+            System.out.println("Строка содержит гласные буквы");
+        } catch (ExceptionString e) {
             System.out.println(e.getMessage());
         }
     }
 
-    public static boolean verificationLitter(String stringInput) {
+    public static void verificationLitter(String stringInput) throws ExceptionString {
         String pattern = "[a e i о u y]+|[а о э е и ы у ё ю я]+";
         Pattern pat = Pattern.compile(pattern);
         Matcher mat = pat.matcher(stringInput.toLowerCase());
-        return mat.find();
+        if (!mat.find()) {
+            throw new ExceptionString("Ошибка: строка не содержит гласных букв");
+        }
     }
 }
-
-class ExceptionString extends Exception {
-    public ExceptionString(String message) {
-        super(message);
+    class ExceptionString extends Exception {
+        public ExceptionString(String message) {
+            super(message);
+        }
     }
-}
