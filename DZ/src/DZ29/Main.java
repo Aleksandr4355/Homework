@@ -1,9 +1,9 @@
 package DZ29;
-
+@FunctionalInterface
 interface AnonymousInterface {
     void anonymousMethod(String text1, String text2);
 }
-
+@FunctionalInterface
 interface LambdaInterface {
     void lambdaMethod(String text1, String text2);
 }
