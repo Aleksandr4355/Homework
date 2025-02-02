@@ -2,7 +2,7 @@ package DZ32;
 
 import java.util.*;
 
-public class Main extends TreeSet {
+public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         TreeSet<Integer> treeSet = new TreeSet<>();
